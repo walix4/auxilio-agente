@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function PhoneFrame({
   src,
   alt,
@@ -14,6 +16,7 @@ export function PhoneFrame({
   height?: number;
   priority?: boolean;
 }) {
+  const resolvedSrc = src.startsWith("/") ? `${BASE_PATH}${src}` : src;
   return (
     <div
       className={cn(
@@ -24,7 +27,7 @@ export function PhoneFrame({
     >
       <div className="relative h-full w-full overflow-hidden rounded-[36px] bg-white">
         <Image
-          src={src}
+          src={resolvedSrc}
           alt={alt}
           fill
           priority={priority}
