@@ -14,7 +14,7 @@ const METRICS = [
 
 export function TurnByTurn() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-24 lg:py-32">
+    <section className="relative overflow-hidden py-24 lg:py-32">
       <div className="container-wide relative">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="order-2 lg:order-1 lg:col-span-5">
@@ -25,7 +25,7 @@ export function TurnByTurn() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="absolute -inset-12 -z-10 rounded-full bg-[#0B1735]/5 blur-3xl" />
+              <div className="absolute -inset-12 -z-10 bg-radial-steel blur-3xl" />
               <PhoneFrame
                 src="/agent-screens/route-map.png"
                 alt="Auxilio Agente — Route navigation screen"
@@ -36,12 +36,11 @@ export function TurnByTurn() {
 
           <div className="order-1 lg:order-2 lg:col-span-7">
             <SectionHeading
-              theme="light"
               eyebrow="02 · Navigate live"
               title={
                 <>
                   Turn-by-turn routing,{" "}
-                  <span className="text-[#0B1735]/80">cohort-aware</span> the
+                  <span className="gradient-text-steel">cohort-aware</span> the
                   whole way.
                 </>
               }
@@ -56,16 +55,16 @@ export function TurnByTurn() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+                  className="flex items-center gap-3 panel rounded-xl px-4 py-3"
                 >
-                  <span className="flex size-9 items-center justify-center rounded-lg bg-[#0B1735] text-white">
-                    <m.icon className="size-4" />
+                  <span className="flex size-9 items-center justify-center rounded-lg bg-white/[0.04] ring-1 ring-white/10">
+                    <m.icon className="size-4 text-steel-300" />
                   </span>
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-haze-400">
                       {m.label}
                     </div>
-                    <div className="font-display text-[18px] font-semibold text-[#0B1735]">
+                    <div className="font-display text-[18px] font-semibold text-white">
                       {m.value}
                     </div>
                   </div>
@@ -73,14 +72,14 @@ export function TurnByTurn() {
               ))}
             </div>
 
-            <ul className="mt-8 space-y-3 text-[14.5px] text-slate-700">
+            <ul className="mt-8 space-y-3 text-[14.5px] text-haze-200">
               {[
                 "Real-time bearing of every responding officer on the same map.",
                 "Right-rail quick actions: re-center, escalate, suspect intel, encrypted call.",
                 "Auto-mute non-critical notifications once a dispatch is accepted.",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2.5">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-signal-600" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-signal-500" />
                   <span>{t}</span>
                 </li>
               ))}

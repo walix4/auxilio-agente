@@ -12,12 +12,11 @@ export function IncidentCapture() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-7">
             <SectionHeading
-              theme="light"
               eyebrow="04 · Incident capture"
               title={
                 <>
                   The report writes itself —{" "}
-                  <span className="text-signal-600">on scene.</span>
+                  <span className="gradient-text-signal">on scene.</span>
                 </>
               }
               description="Plate, make, model, year, color. Three angles of the vehicle. Suspect tags applied at dispatch. Auxilio Agente captures it all in the field and pre-fills the incident report before the officer leaves the scene."
@@ -47,15 +46,13 @@ export function IncidentCapture() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="panel rounded-2xl p-4"
                 >
-                  <span className="flex size-9 items-center justify-center rounded-lg bg-signal-50 ring-1 ring-signal-200">
-                    <f.icon className="size-4 text-signal-600" />
-                  </span>
-                  <div className="mt-3 font-display text-[15px] font-semibold text-[#0B1735]">
+                  <f.icon className="size-4 text-signal-300" />
+                  <div className="mt-3 font-display text-[15px] font-semibold text-white">
                     {f.title}
                   </div>
-                  <div className="mt-1 text-[13px] leading-[1.5] text-slate-600">
+                  <div className="mt-1 text-[13px] leading-[1.5] text-haze-300">
                     {f.body}
                   </div>
                 </motion.div>
@@ -71,7 +68,7 @@ export function IncidentCapture() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="absolute -inset-12 -z-10 rounded-full bg-signal-100/60 blur-3xl" />
+              <div className="absolute -inset-12 -z-10 bg-radial-fade blur-3xl" />
               <PhoneFrame
                 src="/agent-screens/vehicle-details.png"
                 alt="Auxilio Agente — Vehicle details capture screen"

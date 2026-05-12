@@ -24,15 +24,14 @@ const FEATURES = [
 
 export function FieldNetwork() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-24 lg:py-32">
+    <section className="relative overflow-hidden py-24 lg:py-32">
       <div className="container-wide relative">
         <SectionHeading
-          theme="light"
           eyebrow="03 · Field network"
           title={
             <>
               Every officer is a{" "}
-              <span className="text-signal-600">node</span>, not a number.
+              <span className="gradient-text-signal">node</span>, not a number.
             </>
           }
           description="Auxilio Agente isn't a radio. It's a peer-to-peer mesh of badged responders, their networks, and the people who depend on them."
@@ -52,15 +51,15 @@ export function FieldNetwork() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_-15px_rgba(11,23,53,0.15)] lg:p-6"
+                className="panel-deep p-5 lg:p-6"
               >
-                <span className="flex size-10 items-center justify-center rounded-xl bg-signal-50 ring-1 ring-signal-200">
-                  <f.icon className="size-4 text-signal-600" />
+                <span className="flex size-10 items-center justify-center rounded-xl bg-signal-500/10 ring-1 ring-signal-500/30">
+                  <f.icon className="size-4 text-signal-300" />
                 </span>
-                <h3 className="mt-4 font-display text-[19px] font-semibold text-[#0B1735]">
+                <h3 className="mt-4 font-display text-[19px] font-semibold text-white">
                   {f.title}
                 </h3>
-                <p className="mt-1.5 text-[14px] leading-[1.55] text-slate-600">
+                <p className="mt-1.5 text-[14px] leading-[1.55] text-haze-300">
                   {f.body}
                 </p>
               </motion.div>
@@ -100,9 +99,10 @@ function NetworkVisual() {
   };
 
   return (
-    <div className="relative aspect-square overflow-hidden rounded-3xl border border-[#0B1735]/10 bg-[#0B1735] shadow-[0_30px_80px_-30px_rgba(11,23,53,0.4)]">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0B1735] via-[#060B1F] to-[#0B1735]" />
-      <div className="absolute inset-0 bg-grid-fine bg-grid-md opacity-20 mask-radial" />
+    <div className="relative aspect-square panel-deep overflow-hidden rounded-3xl">
+      <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-950 to-ink-900" />
+      <div className="absolute inset-0 bg-grid-fine bg-grid-md opacity-25 mask-radial" />
+      <div className="absolute -inset-1/4 bg-radial-fade opacity-30 blur-2xl" />
 
       <svg
         className="absolute inset-0 size-full"
@@ -190,7 +190,7 @@ function NetworkVisual() {
       ))}
 
       <div className="absolute left-3 top-3 z-10 flex flex-col gap-1.5">
-        <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-[#060B1F]/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] backdrop-blur">
+        <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-ink-900/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] backdrop-blur">
           <span className="relative flex size-1.5">
             <span className="absolute inset-0 rounded-full bg-signal-500 animate-ping opacity-70" />
             <span className="relative size-1.5 rounded-full bg-signal-500" />
@@ -199,12 +199,12 @@ function NetworkVisual() {
             Tracking · {contacts.length + ambient.length} nodes
           </span>
         </div>
-        <div className="rounded-md border border-white/10 bg-[#060B1F]/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] text-haze-400 backdrop-blur">
+        <div className="rounded-md border border-white/10 bg-ink-900/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] text-haze-400 backdrop-blur">
           40.7178° N · 74.0431° W
         </div>
       </div>
 
-      <div className="absolute right-3 top-3 z-10 rounded-md border border-white/10 bg-[#060B1F]/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] text-haze-400 backdrop-blur">
+      <div className="absolute right-3 top-3 z-10 rounded-md border border-white/10 bg-ink-900/70 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.16em] text-haze-400 backdrop-blur">
         5km · scan 3.0s
       </div>
 
@@ -248,8 +248,8 @@ function NetworkVisual() {
                   c.primary
                     ? "size-8 bg-signal-500/90 ring-signal-300/50"
                     : c.warn
-                    ? "size-7 bg-[#060B1F] ring-signal-400/40"
-                    : "size-7 bg-[#060B1F] ring-white/15"
+                    ? "size-7 bg-ink-900 ring-signal-400/40"
+                    : "size-7 bg-ink-900 ring-white/15"
                 }`}
               >
                 {c.primary && (
@@ -266,8 +266,8 @@ function NetworkVisual() {
                   c.primary
                     ? "border-signal-500/50 bg-signal-500/10 text-signal-200"
                     : c.warn
-                    ? "border-signal-500/30 bg-[#060B1F]/80 text-signal-200"
-                    : "border-white/10 bg-[#060B1F]/80 text-haze-300"
+                    ? "border-signal-500/30 bg-ink-900/80 text-signal-200"
+                    : "border-white/10 bg-ink-900/80 text-haze-300"
                 }`}
               >
                 {c.label}

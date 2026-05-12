@@ -7,7 +7,7 @@ import { PhoneFrame } from "./phone-frame";
 
 export function AgentHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white pt-32 pb-20 text-[#0B1735] lg:pt-40 lg:pb-28">
+    <section className="relative isolate overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
       <Background />
 
       <div className="container-wide relative z-10">
@@ -17,12 +17,12 @@ export function AgentHero() {
           transition={{ duration: 0.4 }}
           className="flex justify-center"
         >
-          <div className="inline-flex items-center gap-2.5 rounded-md border border-signal-500/30 bg-signal-50 px-3 py-1.5">
+          <div className="inline-flex items-center gap-2.5 rounded-md border border-signal-500/25 bg-signal-500/[0.06] px-3 py-1.5 backdrop-blur-md">
             <span className="relative flex size-1.5">
               <span className="absolute inset-0 rounded-full bg-signal-500 animate-ping opacity-70" />
               <span className="relative size-1.5 rounded-full bg-signal-500" />
             </span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-signal-700">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-signal-200">
               Auxilio Agente · iOS & Android
             </span>
           </div>
@@ -34,17 +34,17 @@ export function AgentHero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="font-display text-display-xl font-medium tracking-[-0.04em] text-[#0B1735] text-balance"
+              className="font-display text-display-xl font-medium tracking-[-0.04em] text-white text-balance"
             >
               The badge in <br />
-              <span className="text-signal-600">your pocket.</span>
+              <span className="gradient-text-signal">your pocket.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="mt-7 max-w-xl text-[17px] leading-[1.6] text-slate-600 text-pretty"
+              className="mt-7 max-w-xl text-[17px] leading-[1.6] text-haze-300 text-pretty"
             >
               Auxilio Agente turns every officer into a node in the dispatch
               network. Accept emergencies in one tap, navigate live to the
@@ -64,11 +64,7 @@ export function AgentHero() {
                   Download Agente
                 </a>
               </Button>
-              <Button
-                size="lg"
-                asChild
-                className="rounded-lg border border-[#0B1735]/15 bg-white text-[#0B1735] shadow-none hover:bg-slate-50 hover:border-[#0B1735]/30"
-              >
+              <Button variant="outline" size="lg" asChild className="rounded-lg">
                 <a href="#features">
                   See it in action
                   <ArrowRight className="size-4" />
@@ -89,10 +85,10 @@ export function AgentHero() {
                 { v: "Offline", l: "incident capture" },
               ].map((s) => (
                 <div key={s.l}>
-                  <dt className="font-display text-2xl font-semibold tracking-[-0.02em] text-[#0B1735]">
+                  <dt className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">
                     {s.v}
                   </dt>
-                  <dd className="mt-1 font-mono text-[10.5px] uppercase tracking-[0.18em] text-slate-500">
+                  <dd className="mt-1 font-mono text-[10.5px] uppercase tracking-[0.18em] text-haze-400">
                     {s.l}
                   </dd>
                 </div>
@@ -107,7 +103,7 @@ export function AgentHero() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <div className="absolute -inset-10 -z-10 rounded-full bg-signal-100/70 blur-3xl" />
+              <div className="absolute -inset-10 -z-10 bg-radial-fade blur-3xl" />
               <PhoneFrame
                 src="/agent-screens/accept-emergency.png"
                 alt="Auxilio Agente — Accept Emergency screen"
@@ -162,21 +158,21 @@ function FloatingChip({
       transition={{ duration: 0.5, delay: 0.8 }}
       className={`absolute hidden md:block ${className}`}
     >
-      <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-[0_10px_30px_-10px_rgba(11,23,53,0.18)]">
+      <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-ink-900/85 px-3.5 py-2.5 backdrop-blur-xl shadow-panel">
         <span
           className={`flex size-8 items-center justify-center rounded-lg ${
             accent
-              ? "bg-signal-50 text-signal-600 ring-1 ring-signal-200"
-              : "bg-slate-100 text-[#0B1735] ring-1 ring-slate-200"
+              ? "bg-signal-500/15 text-signal-300 ring-1 ring-signal-500/30"
+              : "bg-white/[0.04] text-haze-200 ring-1 ring-white/10"
           }`}
         >
           <Icon className="size-3.5" />
         </span>
         <div>
-          <div className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-slate-500">
+          <div className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-haze-400">
             {title}
           </div>
-          <div className="font-display text-[12.5px] font-medium text-[#0B1735]">
+          <div className="font-display text-[12.5px] font-medium text-white">
             {sub}
           </div>
         </div>
@@ -189,18 +185,18 @@ function Background() {
   return (
     <>
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute inset-0 opacity-[0.5] mask-radial"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(11,23,53,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(11,23,53,0.05) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <div className="absolute inset-0 bg-grid-fine bg-grid-md opacity-50 mask-radial" />
+        <div className="absolute inset-0 bg-grid-bold bg-grid-lg opacity-25 mask-fade-b" />
       </div>
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-[10%] left-1/3 h-[680px] w-[900px] -translate-x-1/2 rounded-full bg-signal-200/50 blur-[140px]" />
-        <div className="absolute -bottom-[10%] right-[5%] h-[480px] w-[480px] rounded-full bg-steel-200/50 blur-[120px]" />
+        <div className="absolute -top-[10%] left-1/3 h-[680px] w-[900px] -translate-x-1/2 rounded-full bg-signal-700/20 blur-[140px]" />
+        <div className="absolute -bottom-[10%] right-[5%] h-[480px] w-[480px] rounded-full bg-steel-700/25 blur-[120px]" />
+      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[200vh] mask-fade-b"
+      >
+        <div className="absolute inset-x-0 h-[2px] scanline animate-scan" />
       </div>
     </>
   );

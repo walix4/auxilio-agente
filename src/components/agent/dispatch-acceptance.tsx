@@ -38,12 +38,11 @@ export function DispatchAcceptance() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <SectionHeading
-              theme="light"
               eyebrow="01 · Accept emergency"
               title={
                 <>
                   From SOS to{" "}
-                  <span className="text-signal-600">accepted</span> in a
+                  <span className="gradient-text-signal">accepted</span> in a
                   single tap.
                 </>
               }
@@ -62,7 +61,7 @@ export function DispatchAcceptance() {
                     className={`rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide ${
                       i === 0
                         ? "bg-signal-600 text-white"
-                        : "bg-[#0B1735] text-white"
+                        : "border border-white/10 bg-white/[0.04] text-haze-200"
                     }`}
                   >
                     {tag}
@@ -76,7 +75,7 @@ export function DispatchAcceptance() {
             <ol className="relative space-y-4">
               <span
                 aria-hidden
-                className="absolute left-[27px] top-4 bottom-4 w-px bg-gradient-to-b from-signal-500/40 via-slate-300 to-transparent"
+                className="absolute left-[27px] top-4 bottom-4 w-px bg-gradient-to-b from-signal-500/40 via-white/10 to-transparent"
               />
               {TIMELINE.map((item, i) => (
                 <motion.li
@@ -85,24 +84,24 @@ export function DispatchAcceptance() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-10% 0px" }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="relative flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_-15px_rgba(11,23,53,0.15)] lg:p-6"
+                  className="relative flex gap-4 panel-deep p-5 lg:p-6"
                 >
                   <span className="relative shrink-0">
-                    <span className="flex size-[54px] items-center justify-center rounded-xl bg-signal-50 ring-1 ring-signal-200">
-                      <item.icon className="size-5 text-signal-600" />
+                    <span className="flex size-[54px] items-center justify-center rounded-xl bg-signal-500/10 ring-1 ring-signal-500/30">
+                      <item.icon className="size-5 text-signal-300" />
                     </span>
                   </span>
                   <div className="min-w-0">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-signal-600">
+                      <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-signal-300">
                         {item.t}
                       </span>
-                      <span className="h-px flex-1 bg-slate-200" />
+                      <span className="h-px flex-1 bg-white/5" />
                     </div>
-                    <h3 className="mt-1.5 font-display text-[18px] font-semibold text-[#0B1735]">
+                    <h3 className="mt-1.5 font-display text-[18px] font-semibold text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-1 text-[14px] leading-[1.55] text-slate-600">
+                    <p className="mt-1 text-[14px] leading-[1.55] text-haze-300">
                       {item.body}
                     </p>
                   </div>
@@ -115,20 +114,20 @@ export function DispatchAcceptance() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="mt-6 flex items-center gap-3 rounded-2xl border border-green-200 bg-green-50 px-5 py-4"
+              className="mt-6 flex items-center gap-3 rounded-2xl border border-green-500/30 bg-green-500/[0.08] px-5 py-4"
             >
-              <span className="flex size-9 items-center justify-center rounded-full bg-green-100 ring-1 ring-green-300">
-                <Check className="size-4 text-green-700" />
+              <span className="flex size-9 items-center justify-center rounded-full bg-green-500/15 ring-1 ring-green-500/30">
+                <Check className="size-4 text-green-400" />
               </span>
               <div>
-                <div className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-green-700">
+                <div className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-green-300">
                   Officer Arrived
                 </div>
-                <div className="font-display text-[15px] font-medium text-[#0B1735]">
+                <div className="font-display text-[15px] font-medium text-white">
                   Auto-confirmed via geofence · Family network notified
                 </div>
               </div>
-              <Clock className="ml-auto size-4 text-green-700" />
+              <Clock className="ml-auto size-4 text-green-300" />
             </motion.div>
           </div>
         </div>

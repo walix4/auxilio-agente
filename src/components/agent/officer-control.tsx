@@ -18,7 +18,7 @@ const NAV = [
 
 export function OfficerControl() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-24 lg:py-32">
+    <section className="relative overflow-hidden py-24 lg:py-32">
       <div className="container-wide relative">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
@@ -29,7 +29,7 @@ export function OfficerControl() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="absolute -inset-12 -z-10 rounded-full bg-[#0B1735]/5 blur-3xl" />
+              <div className="absolute -inset-12 -z-10 bg-radial-steel blur-3xl" />
               <PhoneFrame
                 src="/agent-screens/drawer.png"
                 alt="Auxilio Agente — Officer profile drawer"
@@ -40,12 +40,11 @@ export function OfficerControl() {
 
           <div className="lg:col-span-7">
             <SectionHeading
-              theme="light"
               eyebrow="05 · Officer control"
               title={
                 <>
                   One drawer.{" "}
-                  <span className="text-[#0B1735]/80">
+                  <span className="gradient-text-steel">
                     Every shift function.
                   </span>
                 </>
@@ -61,24 +60,24 @@ export function OfficerControl() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: i * 0.04 }}
-                  className="group flex flex-col items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:border-signal-300"
+                  className="group flex flex-col items-start gap-3 panel rounded-xl p-4 transition-colors hover:border-signal-500/30"
                 >
-                  <span className="flex size-9 items-center justify-center rounded-lg bg-[#0B1735] text-white transition-colors group-hover:bg-signal-600">
-                    <item.icon className="size-4" />
+                  <span className="flex size-9 items-center justify-center rounded-lg bg-white/[0.04] ring-1 ring-white/10 transition-colors group-hover:bg-signal-500/10 group-hover:ring-signal-500/30">
+                    <item.icon className="size-4 text-haze-200 transition-colors group-hover:text-signal-300" />
                   </span>
-                  <div className="font-display text-[14px] font-medium text-[#0B1735]">
+                  <div className="font-display text-[14px] font-medium text-white">
                     {item.label}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-8 flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+            <div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4">
               <div className="flex -space-x-2">
                 {[0, 1, 2].map((i) => (
                   <span
                     key={i}
-                    className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-steel-500 to-[#0B1735] ring-2 ring-white"
+                    className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-steel-500 to-ink-700 ring-2 ring-ink-950"
                   >
                     <svg viewBox="0 0 24 24" className="size-4 text-white" fill="currentColor">
                       <circle cx="12" cy="9" r="4" />
@@ -87,8 +86,8 @@ export function OfficerControl() {
                   </span>
                 ))}
               </div>
-              <div className="text-[13.5px] text-slate-700">
-                <span className="font-semibold text-[#0B1735]">12,400+ officers</span>{" "}
+              <div className="text-[13.5px] text-haze-200">
+                <span className="font-semibold text-white">12,400+ officers</span>{" "}
                 already running Auxilio Agente in the field.
               </div>
             </div>

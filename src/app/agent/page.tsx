@@ -6,6 +6,7 @@ import { FieldNetwork } from "@/components/agent/field-network";
 import { IncidentCapture } from "@/components/agent/incident-capture";
 import { OfficerControl } from "@/components/agent/officer-control";
 import { AgentCta } from "@/components/agent/cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export const metadata: Metadata = {
   title: "Auxilio Agente — The officer's field app",
@@ -17,14 +18,15 @@ export default function AgentPage() {
   return (
     <>
       <AgentHero />
-      <div className="relative bg-white text-[#0B1735]">
-        <DispatchAcceptance />
-        <TurnByTurn />
-        <FieldNetwork />
-        <IncidentCapture />
-        <OfficerControl />
-        <AgentCta />
-      </div>
+      <SectionDivider label="// agente.dispatch" />
+      <DispatchAcceptance />
+      <TurnByTurn />
+      <SectionDivider label="// agente.network" />
+      <FieldNetwork />
+      <IncidentCapture />
+      <SectionDivider label="// agente.control" />
+      <OfficerControl />
+      <AgentCta />
     </>
   );
 }

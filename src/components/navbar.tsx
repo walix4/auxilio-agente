@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
@@ -21,8 +20,6 @@ const NAV_LINKS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isLight = pathname?.startsWith("/agent") ?? false;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -54,16 +51,12 @@ export function Navbar() {
             className={cn(
               "relative flex items-center justify-between rounded-full border px-3 transition-all duration-500",
               scrolled
-                ? isLight
-                  ? "border-slate-200 bg-white/85 px-4 py-2.5 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(11,23,53,0.18)]"
-                  : "border-white/10 bg-ink-900/70 px-4 py-2.5 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.7)]"
-                : isLight
-                ? "border-transparent bg-white/60 backdrop-blur-md px-2 py-2"
+                ? "border-white/10 bg-ink-900/70 px-4 py-2.5 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.7)]"
                 : "border-transparent bg-transparent px-2 py-2"
             )}
           >
             <Link href="/" aria-label="Auxilio home" className="pl-2">
-              <Logo theme={isLight ? "light" : "dark"} />
+              <Logo />
             </Link>
 
             <ul className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
@@ -74,11 +67,7 @@ export function Navbar() {
                     className={cn(
                       "relative inline-flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-[13.5px] transition-colors",
                       l.highlight
-                        ? isLight
-                          ? "border border-signal-500/30 bg-signal-50 text-signal-700 hover:bg-signal-100"
-                          : "border border-signal-500/30 bg-signal-500/[0.08] text-signal-200 hover:bg-signal-500/[0.14] hover:text-white"
-                        : isLight
-                        ? "text-[#0B1735]/75 hover:text-[#0B1735]"
+                        ? "border border-signal-500/30 bg-signal-500/[0.08] text-signal-200 hover:bg-signal-500/[0.14] hover:text-white"
                         : "text-haze-200 hover:text-white"
                     )}
                   >
@@ -98,12 +87,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn(
-                  "hidden md:inline-flex rounded-md",
-                  isLight
-                    ? "text-[#0B1735]/75 hover:text-[#0B1735] hover:bg-slate-100"
-                    : "text-haze-200 hover:text-white"
-                )}
+                className="hidden md:inline-flex rounded-md text-haze-200 hover:text-white"
                 asChild
               >
                 <Link href="/#enterprise">Sign in</Link>
@@ -118,12 +102,7 @@ export function Navbar() {
                 type="button"
                 aria-label="Open menu"
                 onClick={() => setOpen(true)}
-                className={cn(
-                  "lg:hidden inline-flex size-10 items-center justify-center rounded-md border",
-                  isLight
-                    ? "border-slate-200 bg-white text-[#0B1735] hover:bg-slate-50"
-                    : "border-white/10 bg-white/[0.03] text-haze-100 hover:bg-white/[0.06]"
-                )}
+                className="lg:hidden inline-flex size-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-haze-100 hover:bg-white/[0.06]"
               >
                 <Menu className="size-4" />
               </button>
