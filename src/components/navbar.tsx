@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, ChevronRight } from "lucide-react";
@@ -61,14 +62,14 @@ export function Navbar() {
                 : "border-transparent bg-transparent px-2 py-2"
             )}
           >
-            <a href="/" aria-label="Auxilio home" className="pl-2">
+            <Link href="/" aria-label="Auxilio home" className="pl-2">
               <Logo theme={isLight ? "light" : "dark"} />
-            </a>
+            </Link>
 
             <ul className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a
+                  <Link
                     href={l.href}
                     className={cn(
                       "relative inline-flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-[13.5px] transition-colors",
@@ -88,7 +89,7 @@ export function Navbar() {
                       </span>
                     )}
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,13 +106,13 @@ export function Navbar() {
                 )}
                 asChild
               >
-                <a href="/#enterprise">Sign in</a>
+                <Link href="/#enterprise">Sign in</Link>
               </Button>
               <Button size="sm" asChild className="hidden sm:inline-flex rounded-md">
-                <a href="/#cta">
+                <Link href="/#cta">
                   Request demo
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-                </a>
+                </Link>
               </Button>
               <button
                 type="button"
@@ -167,29 +168,29 @@ export function Navbar() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.05 + i * 0.05 }}
                   >
-                    <a
+                    <Link
                       href={l.href}
                       onClick={() => setOpen(false)}
                       className="group flex items-center justify-between border-b border-white/5 py-5 text-2xl font-display font-medium text-white"
                     >
                       <span>{l.label}</span>
                       <ChevronRight className="size-5 text-haze-300 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
 
               <div className="p-6 space-y-3">
                 <Button size="lg" className="w-full" asChild>
-                  <a href="#cta" onClick={() => setOpen(false)}>
+                  <Link href="/#cta" onClick={() => setOpen(false)}>
                     Request government demo
                     <ArrowRight className="size-4" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" className="w-full" asChild>
-                  <a href="#architecture" onClick={() => setOpen(false)}>
+                  <Link href="/#architecture" onClick={() => setOpen(false)}>
                     Explore architecture
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </motion.div>
