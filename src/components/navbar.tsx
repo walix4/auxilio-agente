@@ -9,12 +9,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Platform", href: "/#how-it-works" },
-  { label: "Architecture", href: "/#architecture" },
-  { label: "Intelligence", href: "/#criteria-database" },
-  { label: "Security", href: "/#security" },
-  { label: "Use cases", href: "/#use-cases" },
-  { label: "Agent App", href: "/agent", highlight: true },
+  { label: "Accept emergency", href: "#features" },
+  { label: "Field network", href: "#features" },
+  { label: "Incident capture", href: "#features" },
+  { label: "Download", href: "#download" },
 ];
 
 export function Navbar() {
@@ -55,48 +53,29 @@ export function Navbar() {
                 : "border-transparent bg-transparent px-2 py-2"
             )}
           >
-            <Link href="/" aria-label="Auxilio home" className="pl-2">
+            <Link href="/" aria-label="Auxilio Agente home" className="pl-2">
               <Logo />
             </Link>
 
             <ul className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
               {NAV_LINKS.map((l) => (
-                <li key={l.href}>
-                  <Link
+                <li key={l.label}>
+                  <a
                     href={l.href}
-                    className={cn(
-                      "relative inline-flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-[13.5px] transition-colors",
-                      l.highlight
-                        ? "border border-signal-500/30 bg-signal-500/[0.08] text-signal-200 hover:bg-signal-500/[0.14] hover:text-white"
-                        : "text-haze-200 hover:text-white"
-                    )}
+                    className="relative inline-flex items-center rounded-md px-3.5 py-1.5 text-[13.5px] text-haze-200 transition-colors hover:text-white"
                   >
-                    {l.highlight && (
-                      <span className="relative flex size-1.5">
-                        <span className="absolute inset-0 rounded-full bg-signal-500 animate-ping opacity-70" />
-                        <span className="relative size-1.5 rounded-full bg-signal-500" />
-                      </span>
-                    )}
                     {l.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
 
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hidden md:inline-flex rounded-md text-haze-200 hover:text-white"
-                asChild
-              >
-                <Link href="/#enterprise">Sign in</Link>
-              </Button>
               <Button size="sm" asChild className="hidden sm:inline-flex rounded-md">
-                <Link href="/#cta">
-                  Request demo
+                <a href="#download">
+                  Download Agente
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-                </Link>
+                </a>
               </Button>
               <button
                 type="button"
@@ -111,7 +90,6 @@ export function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -128,7 +106,7 @@ export function Navbar() {
               className="flex h-full flex-col"
             >
               <div className="flex items-center justify-between p-6">
-                <Logo theme="dark" />
+                <Logo />
                 <button
                   type="button"
                   aria-label="Close menu"
@@ -142,34 +120,29 @@ export function Navbar() {
               <ul className="flex-1 px-6 pt-8 space-y-1">
                 {NAV_LINKS.map((l, i) => (
                   <motion.li
-                    key={l.href}
+                    key={l.label}
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.05 + i * 0.05 }}
                   >
-                    <Link
+                    <a
                       href={l.href}
                       onClick={() => setOpen(false)}
                       className="group flex items-center justify-between border-b border-white/5 py-5 text-2xl font-display font-medium text-white"
                     >
                       <span>{l.label}</span>
                       <ChevronRight className="size-5 text-haze-300 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                    </a>
                   </motion.li>
                 ))}
               </ul>
 
               <div className="p-6 space-y-3">
-                <Button size="lg" className="w-full" asChild>
-                  <Link href="/#cta" onClick={() => setOpen(false)}>
-                    Request government demo
+                <Button size="lg" className="w-full rounded-lg" asChild>
+                  <a href="#download" onClick={() => setOpen(false)}>
+                    Download Agente
                     <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="w-full" asChild>
-                  <Link href="/#architecture" onClick={() => setOpen(false)}>
-                    Explore architecture
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </motion.div>

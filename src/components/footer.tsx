@@ -6,33 +6,29 @@ import { ArrowUpRight } from "lucide-react";
 
 const COLS = [
   {
-    title: "Platform",
+    title: "Agente",
     links: [
-      { label: "AI Dispatch Engine", href: "#dispatch-engine" },
-      { label: "Officer Agent", href: "#officer-platform" },
-      { label: "Criteria Intelligence", href: "#criteria-database" },
-      { label: "Communication", href: "#communication" },
-      { label: "Architecture", href: "#architecture" },
+      { label: "Accept emergency", href: "#features" },
+      { label: "Navigate live", href: "#features" },
+      { label: "Field network", href: "#features" },
+      { label: "Incident capture", href: "#features" },
+      { label: "Officer control", href: "#features" },
     ],
   },
   {
-    title: "Infrastructure",
+    title: "Download",
     links: [
-      { label: "API & Webhooks", href: "#api" },
-      { label: "Encryption", href: "#security" },
-      { label: "Deployment", href: "#enterprise" },
-      { label: "Status", href: "#" },
-      { label: "Changelog", href: "#" },
+      { label: "App Store", href: "#download" },
+      { label: "Google Play", href: "#download" },
+      { label: "System requirements", href: "#download" },
     ],
   },
   {
-    title: "Customers",
+    title: "Departments",
     links: [
-      { label: "Police Departments", href: "#use-cases" },
-      { label: "Smart Cities", href: "#use-cases" },
-      { label: "Universities", href: "#use-cases" },
-      { label: "Airports", href: "#use-cases" },
-      { label: "Private Security", href: "#use-cases" },
+      { label: "Rollout in 48h", href: "#download" },
+      { label: "Single sign-on", href: "#download" },
+      { label: "Compliance", href: "#download" },
     ],
   },
   {
@@ -41,8 +37,7 @@ const COLS = [
       { label: "About", href: "#" },
       { label: "Careers", href: "#" },
       { label: "Press", href: "#" },
-      { label: "Investors", href: "#" },
-      { label: "Contact", href: "#cta" },
+      { label: "Contact", href: "#download" },
     ],
   },
 ];
@@ -58,13 +53,13 @@ export function Footer() {
       <div className="container-wide relative z-10 pt-24 pb-10">
         <div className="mb-16">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-haze-400 mb-4">
-            // Software-defined public safety infrastructure
+            // The badge in your pocket
           </p>
           <h3
             aria-hidden
             className="font-display text-[clamp(3.5rem,12vw,11rem)] font-black leading-none tracking-[-0.05em] text-stroke select-none"
           >
-            AUXILIO
+            AGENTE
           </h3>
         </div>
 
@@ -72,13 +67,13 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Logo />
             <p className="mt-5 max-w-sm text-[14px] leading-relaxed text-haze-300">
-              Auxilio is the AI coordination layer for emergency response.
-              Built for police departments, smart cities, and infrastructure
-              operators that need real-time, software-defined dispatch.
+              Auxilio Agente is the field app for badged responders — one tap to
+              accept, live nav to the scene, and full incident capture on the
+              ground.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-haze-200">
               <span className="size-1.5 rounded-full bg-signal-500 animate-pulse" />
-              All systems operational
+              iOS 16+ · Android 13+
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Apple, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -55,10 +54,10 @@ export function AgentCta() {
               </a>
             </Button>
             <Button variant="ghost" size="lg" asChild className="rounded-lg">
-              <Link href="/#cta">
+              <a href="#download">
                 Department rollout
                 <ArrowRight className="size-4" />
-              </Link>
+              </a>
             </Button>
           </div>
 

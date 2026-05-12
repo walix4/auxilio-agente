@@ -25,36 +25,34 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://auxilio.io"),
+  metadataBase: new URL("https://walix4.github.io"),
   title: {
-    default: "Auxilio — Emergency response, rebuilt for the AI era.",
-    template: "%s · Auxilio",
+    default: "Auxilio Agente — The officer's field app",
+    template: "%s · Auxilio Agente",
   },
   description:
-    "Auxilio replaces outdated dispatch systems with real-time AI coordination, simultaneous responder mobilization, and software-defined public safety infrastructure.",
+    "Auxilio Agente turns every officer into a node in the dispatch network. Accept emergencies in one tap, navigate live to the incident, and capture everything that matters — straight from the field.",
   keywords: [
-    "AI dispatch",
+    "Auxilio Agente",
+    "officer app",
+    "police dispatch",
     "emergency response",
-    "public safety infrastructure",
-    "Auxilio",
-    "real-time coordination",
-    "geospatial intelligence",
-    "police software",
-    "incident response",
+    "public safety",
+    "field officer",
+    "incident capture",
   ],
   openGraph: {
-    title: "Auxilio — Your Safety, Your Control.",
+    title: "Auxilio Agente — The badge in your pocket.",
     description:
-      "AI-native emergency response infrastructure. From SOS tap to 50 dispatched officers in under 5 seconds.",
+      "One-tap emergency acceptance, live turn-by-turn navigation, and instant incident capture for officers in the field.",
     type: "website",
-    url: "https://auxilio.io",
-    siteName: "Auxilio",
+    siteName: "Auxilio Agente",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auxilio — Your Safety, Your Control.",
+    title: "Auxilio Agente — The badge in your pocket.",
     description:
-      "AI-native emergency response infrastructure. From SOS tap to 50 dispatched officers in under 5 seconds.",
+      "One-tap emergency acceptance, live turn-by-turn navigation, and instant incident capture for officers in the field.",
   },
 };
 
