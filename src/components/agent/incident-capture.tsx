@@ -70,7 +70,7 @@ export function IncidentCapture() {
             >
               <div className="absolute -inset-12 -z-10 bg-radial-fade blur-3xl" />
               <PhoneFrame
-                src="/agent-screens/vehicle-details.png"
+                src="/agent-screens/vehicle-details.jpg"
                 alt="Auxilio Agente — Vehicle details capture screen"
                 height={680}
               />

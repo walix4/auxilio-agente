@@ -31,7 +31,7 @@ export function OfficerControl() {
             >
               <div className="absolute -inset-12 -z-10 bg-radial-steel blur-3xl" />
               <PhoneFrame
-                src="/agent-screens/drawer.png"
+                src="/agent-screens/drawer.jpg"
                 alt="Auxilio Agente — Officer profile drawer"
                 height={680}
               />

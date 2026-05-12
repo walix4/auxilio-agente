@@ -27,7 +27,7 @@ export function TurnByTurn() {
             >
               <div className="absolute -inset-12 -z-10 bg-radial-steel blur-3xl" />
               <PhoneFrame
-                src="/agent-screens/route-map.png"
+                src="/agent-screens/route-map.jpg"
                 alt="Auxilio Agente — Route navigation screen"
                 height={680}
               />

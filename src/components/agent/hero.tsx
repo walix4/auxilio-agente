@@ -105,7 +105,7 @@ export function AgentHero() {
             >
               <div className="absolute -inset-10 -z-10 bg-radial-fade blur-3xl" />
               <PhoneFrame
-                src="/agent-screens/accept-emergency.png"
+                src="/agent-screens/accept-emergency.jpg"
                 alt="Auxilio Agente — Accept Emergency screen"
                 height={680}
                 priority
